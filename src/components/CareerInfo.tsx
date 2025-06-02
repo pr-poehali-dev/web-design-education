@@ -1,42 +1,62 @@
 import Icon from "@/components/ui/icon";
 
 const CareerInfo = () => {
-  const salaryData = [
-    { level: "Стажёр", salary: "30-50 тыс. ₽", experience: "0-1 год" },
-    { level: "Джуниор", salary: "50-80 тыс. ₽", experience: "1-2 года" },
-    { level: "Мидл", salary: "80-150 тыс. ₽", experience: "2-4 года" },
-    { level: "Сеньор", salary: "150-300 тыс. ₽", experience: "4+ года" },
+  const roadmapSteps = [
+    {
+      step: 1,
+      title: "Изучите основы",
+      description: "Композиция, цвет, типографика",
+      duration: "1-2 недели",
+    },
+    {
+      step: 2,
+      title: "Освойте Figma",
+      description: "Главный инструмент дизайнера",
+      duration: "2-3 недели",
+    },
+    {
+      step: 3,
+      title: "Создайте портфолио",
+      description: "3-5 учебных проектов",
+      duration: "1-2 месяца",
+    },
+    {
+      step: 4,
+      title: "Изучите HTML/CSS",
+      description: "Базовые знания вёрстки",
+      duration: "2-4 недели",
+    },
   ];
 
-  const careerPaths = [
+  const firstSteps = [
     {
-      title: "UX/UI Дизайнер",
-      description: "Проектирование пользовательских интерфейсов",
-      icon: "Smartphone",
+      title: "Изучите теорию",
+      description: "Основы композиции и цветовой теории",
+      icon: "BookOpen",
     },
     {
-      title: "Product Designer",
-      description: "Комплексная работа над продуктом",
-      icon: "Layers",
+      title: "Скачайте Figma",
+      description: "Бесплатный инструмент для дизайна",
+      icon: "Download",
     },
     {
-      title: "Арт-директор",
-      description: "Руководство дизайн-командой",
+      title: "Практикуйтесь",
+      description: "Повторяйте чужие дизайны",
+      icon: "Repeat",
+    },
+    {
+      title: "Найдите сообщество",
+      description: "Общайтесь с другими дизайнерами",
       icon: "Users",
     },
-    {
-      title: "Фрилансер",
-      description: "Самостоятельная работа с клиентами",
-      icon: "Briefcase",
-    },
   ];
 
-  const requirements = [
-    { skill: "Figma, Sketch, Adobe XD", type: "Инструменты" },
-    { skill: "HTML/CSS основы", type: "Технические" },
-    { skill: "Типографика и композиция", type: "Дизайн" },
-    { skill: "Пользовательский опыт", type: "UX" },
-    { skill: "Коммуникация с командой", type: "Soft skills" },
+  const skills = [
+    { skill: "Figma / Adobe XD", type: "Обязательно" },
+    { skill: "Основы композиции", type: "Обязательно" },
+    { skill: "Цветовая теория", type: "Обязательно" },
+    { skill: "HTML/CSS основы", type: "Желательно" },
+    { skill: "Английский язык", type: "Желательно" },
   ];
 
   return (
@@ -47,69 +67,65 @@ const CareerInfo = () => {
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Профессия веб-дизайнера
+            С чего начать в веб-дизайне
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Узнайте всё о карьере в веб-дизайне: зарплаты, требования и пути
-            развития
+            Пошаговый план изучения веб-дизайна для полных новичков
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {/* Зарплаты */}
+          {/* Дорожная карта */}
           <div className="bg-white rounded-xl p-6 shadow-lg">
             <div className="flex items-center mb-4">
-              <Icon
-                name="DollarSign"
-                size={24}
-                className="text-green-600 mr-2"
-              />
-              <h3 className="text-xl font-semibold">Зарплаты</h3>
+              <Icon name="Map" size={24} className="text-green-600 mr-2" />
+              <h3 className="text-xl font-semibold">Дорожная карта</h3>
             </div>
             <div className="space-y-3">
-              {salaryData.map((item, index) => (
+              {roadmapSteps.map((item, index) => (
                 <div
                   key={index}
-                  className="flex justify-between items-center p-3 bg-gray-50 rounded-lg"
+                  className="flex items-start space-x-3 p-3 bg-gray-50 rounded-lg"
                 >
-                  <div>
+                  <div className="bg-purple-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">
+                    {item.step}
+                  </div>
+                  <div className="flex-1">
                     <div className="font-medium text-gray-900">
-                      {item.level}
+                      {item.title}
                     </div>
-                    <div className="text-sm text-gray-500">
-                      {item.experience}
+                    <div className="text-sm text-gray-600">
+                      {item.description}
+                    </div>
+                    <div className="text-xs text-purple-600 mt-1">
+                      {item.duration}
                     </div>
                   </div>
-                  <div className="font-bold text-purple-600">{item.salary}</div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Карьерные пути */}
+          {/* Первые шаги */}
           <div className="bg-white rounded-xl p-6 shadow-lg">
             <div className="flex items-center mb-4">
-              <Icon
-                name="TrendingUp"
-                size={24}
-                className="text-blue-600 mr-2"
-              />
-              <h3 className="text-xl font-semibold">Карьерные пути</h3>
+              <Icon name="Rocket" size={24} className="text-blue-600 mr-2" />
+              <h3 className="text-xl font-semibold">Первые шаги</h3>
             </div>
             <div className="space-y-4">
-              {careerPaths.map((path, index) => (
+              {firstSteps.map((step, index) => (
                 <div key={index} className="flex items-start space-x-3">
                   <Icon
-                    name={path.icon}
+                    name={step.icon}
                     size={20}
                     className="text-purple-600 mt-1"
                   />
                   <div>
                     <div className="font-medium text-gray-900">
-                      {path.title}
+                      {step.title}
                     </div>
                     <div className="text-sm text-gray-600">
-                      {path.description}
+                      {step.description}
                     </div>
                   </div>
                 </div>
@@ -117,7 +133,7 @@ const CareerInfo = () => {
             </div>
           </div>
 
-          {/* Требования */}
+          {/* Навыки */}
           <div className="bg-white rounded-xl p-6 shadow-lg md:col-span-2 lg:col-span-1">
             <div className="flex items-center mb-4">
               <Icon
@@ -125,14 +141,20 @@ const CareerInfo = () => {
                 size={24}
                 className="text-orange-600 mr-2"
               />
-              <h3 className="text-xl font-semibold">Требования</h3>
+              <h3 className="text-xl font-semibold">Что изучать</h3>
             </div>
             <div className="space-y-3">
-              {requirements.map((req, index) => (
+              {skills.map((skill, index) => (
                 <div key={index} className="flex justify-between items-center">
-                  <div className="font-medium text-gray-900">{req.skill}</div>
-                  <span className="px-2 py-1 text-xs bg-purple-100 text-purple-700 rounded-full">
-                    {req.type}
+                  <div className="font-medium text-gray-900">{skill.skill}</div>
+                  <span
+                    className={`px-2 py-1 text-xs rounded-full ${
+                      skill.type === "Обязательно"
+                        ? "bg-red-100 text-red-700"
+                        : "bg-blue-100 text-blue-700"
+                    }`}
+                  >
+                    {skill.type}
                   </span>
                 </div>
               ))}
@@ -140,9 +162,11 @@ const CareerInfo = () => {
           </div>
         </div>
 
-        {/* Статистика рынка */}
+        {/* Мотивационная статистика */}
         <div className="bg-white rounded-xl p-8 shadow-lg">
-          <h3 className="text-2xl font-bold text-center mb-8">Рынок труда</h3>
+          <h3 className="text-2xl font-bold text-center mb-8">
+            Почему стоит начать
+          </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div>
               <div className="text-3xl font-bold text-purple-600 mb-2">
@@ -155,14 +179,14 @@ const CareerInfo = () => {
               <div className="text-gray-600">Удалённая работа</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-blue-600 mb-2">2-4</div>
-              <div className="text-gray-600">Месяца обучения</div>
+              <div className="text-3xl font-bold text-blue-600 mb-2">3-6</div>
+              <div className="text-gray-600">Месяцев изучения</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-orange-600 mb-2">
-                300%
+                Бесплатно
               </div>
-              <div className="text-gray-600">Рост за 5 лет</div>
+              <div className="text-gray-600">Можно начать</div>
             </div>
           </div>
         </div>

@@ -18,8 +18,8 @@ const Hero = () => {
         </h1>
 
         <p className="text-xl md:text-2xl mb-8 text-purple-100 max-w-3xl mx-auto">
-          Изучите современный веб-дизайн от основ до профессионального уровня.
-          Практические навыки, актуальные инструменты и реальные проекты.
+          Всё что нужно знать начинающему веб-дизайнеру: основы, инструменты,
+          ресурсы и практические советы для старта в профессии.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -27,16 +27,16 @@ const Hero = () => {
             size="lg"
             className="bg-white text-purple-700 hover:bg-purple-50 font-semibold px-8 py-4 text-lg"
           >
-            <Icon name="Play" size={20} className="mr-2" />
-            Начать обучение
+            <Icon name="BookOpen" size={20} className="mr-2" />
+            Изучить основы
           </Button>
           <Button
             size="lg"
             variant="outline"
             className="border-purple-300 text-white hover:bg-purple-600 px-8 py-4 text-lg"
           >
-            <Icon name="BookOpen" size={20} className="mr-2" />
-            Посмотреть программу
+            <Icon name="Download" size={20} className="mr-2" />
+            Бесплатные ресурсы
           </Button>
         </div>
 

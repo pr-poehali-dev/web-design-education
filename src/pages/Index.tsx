@@ -13,7 +13,6 @@ const Index = () => {
       <Header />
       <Hero />
       <CareerInfo />
-      <Courses />
       <DesignBasics />
       <Examples />
       <Resources />
