@@ -19,6 +19,12 @@ const Header = () => {
               Курсы
             </a>
             <a
+              href="#career"
+              className="text-gray-700 hover:text-purple-600 transition-colors"
+            >
+              Профессия
+            </a>
+            <a
               href="#basics"
               className="text-gray-700 hover:text-purple-600 transition-colors"
             >

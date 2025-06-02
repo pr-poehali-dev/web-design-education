@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Courses from "@/components/Courses";
 import DesignBasics from "@/components/DesignBasics";
+import CareerInfo from "@/components/CareerInfo";
 import Examples from "@/components/Examples";
 import Resources from "@/components/Resources";
 import Footer from "@/components/Footer";
@@ -11,6 +12,7 @@ const Index = () => {
     <div className="min-h-screen font-open-sans">
       <Header />
       <Hero />
+      <CareerInfo />
       <Courses />
       <DesignBasics />
       <Examples />
